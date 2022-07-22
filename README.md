@@ -4,3 +4,8 @@ Simple Javascript file to interact with elements in Shadow DOM using CSS Selecto
 
 This file contains following methods :
 
+| Function    | Parameter | ReturnValue                  | Purpose                                                           |
+|-------------|-----------|------------------------------|-------------------------------------------------------------------|
+| getElement  | selector  | element as object            | To get an element from shadow dom matching CSS Selector           |
+| getElements | selector  | elements as array of objects | To get an array of elements from shadow dom matching CSS Selector |
+| scrollTo    | selector  | NA                           | To Scroll to an element                                           |
