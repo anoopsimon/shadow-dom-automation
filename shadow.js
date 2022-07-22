@@ -1,7 +1,4 @@
-/**
- * @author Georgegriff@ (George Griffiths)
- * License Apache-2.0
- */
+
 
 //import { normalizeSelector } from './normalize';
 
