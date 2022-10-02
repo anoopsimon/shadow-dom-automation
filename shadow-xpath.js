@@ -184,8 +184,33 @@ var getXPathObject = function getXPathObject(selector, root = document) {
         }
     }
     webElement = evaluateDeep(splitedSelectors[splitedSelectors.length-1], webElement);
+
+    highlight(webElement);
     return webElement;
 };
+
+/**
+ * highlight web element
+*/
+function highlight(element) {
+    let defaultBG = element.style.backgroundColor;
+    let defaultTransition = element.style.transition;
+    let bcolor = element.style.borderColor;
+
+    element.style.transition = "background 1s";
+    element.style.backgroundColor = "#FDFF47";
+    element.style.borderColor = "red";
+
+    setTimeout(function()
+    {
+        element.style.backgroundColor = defaultBG;
+        element.style.borderColor =bcolor;
+
+        setTimeout(function() {
+            element.style.transition = defaultTransition;
+        }, 1000);
+    }, 10000);
+}
 
 var getXPathAllObject = function getXPathAllObject(selector, root = document) {
 	while (selector.search(/\//)!= 0 && selector.search(/\//)!= -1) {
@@ -441,3 +466,5 @@ function collectElementEvaluateDeep(selector, root) {
 
     return element;
 }
+
+getXPathObject("//input[@id='top-nav-search-input']")
