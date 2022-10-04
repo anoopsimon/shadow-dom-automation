@@ -167,7 +167,7 @@ var evaluateDeep = function evaluateDeep(selector, root) {
 	}
 };
 
-var getXPathObject = function getXPathObject(selector, root = document) {
+var findElementByXpath = function getXPathObject(selector, root = document) {
 	while (selector.search(/\//)!= 0 && selector.search(/\//)!= -1) {
     	selector = selector.replace(/\//,'//');
     }
@@ -212,7 +212,7 @@ function highlight(element) {
     }, 10000);
 }
 
-var getXPathAllObject = function getXPathAllObject(selector, root = document) {
+var findElementsByXpath = function getXPathAllObject(selector, root = document) {
 	while (selector.search(/\//)!= 0 && selector.search(/\//)!= -1) {
     	selector = selector.replace(/\//,'//');
     }
@@ -467,4 +467,4 @@ function collectElementEvaluateDeep(selector, root) {
     return element;
 }
 
-getXPathObject("//input[@id='top-nav-search-input']")
+findElementByXpath("//input[@id='top-nav-search-input']")
